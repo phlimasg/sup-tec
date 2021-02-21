@@ -14,14 +14,14 @@ class CreateCategoriasTable extends Migration
     public function up()
     {
         Schema::create('categorias', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->bigIncrements('id');
             $table->string('nome');
             $table->string('descricao');
             $table->string('telegram_token')->nullable();
             $table->string('telegram_id')->nullable();
             $table->string('telegram_channel')->nullable();
             $table->string('email')->nullable();
-            $table->uuid('filial_id');
+            $table->unsignedBigInteger('filial_id');
             $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade'); 
             $table->timestamps();
         });

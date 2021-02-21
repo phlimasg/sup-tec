@@ -14,11 +14,11 @@ class CreateTecnicosTable extends Migration
     public function up()
     {
         Schema::create('tecnicos', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->bigIncrements('id');
             $table->string('nome');            
             $table->string('email')->nullable();
             $table->string('telefone')->nullable();
-            $table->uuid('filial_id');
+            $table->unsignedBigInteger('filial_id');
             $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade'); 
             $table->timestamps();
         });

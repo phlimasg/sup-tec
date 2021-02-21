@@ -14,10 +14,10 @@ class CreateSalasTable extends Migration
     public function up()
     {
         Schema::create('salas', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->bigIncrements('id');
             $table->string('numero');
             $table->string('descricao')->nullable();            
-            $table->uuid('filial_id');
+            $table->unsignedBigInteger('filial_id');
             $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade'); 
             $table->timestamps();
         });
