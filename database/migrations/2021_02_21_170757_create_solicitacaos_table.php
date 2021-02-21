@@ -22,7 +22,7 @@ class CreateSolicitacaosTable extends Migration
             $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade'); 
             $table->unsignedBigInteger('tecnico_id');
-            $table->foreign('tecnico_id')->references('id')->on('tecnico')->onDelete('cascade'); 
+            $table->foreign('tecnico_id')->references('id')->on('tecnicos')->onDelete('cascade'); 
             $table->unsignedBigInteger('filial_id');
             $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade'); 
             $table->unsignedBigInteger('solicitante_id');
