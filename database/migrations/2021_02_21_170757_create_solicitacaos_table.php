@@ -26,7 +26,7 @@ class CreateSolicitacaosTable extends Migration
             $table->unsignedBigInteger('filial_id');
             $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade'); 
             $table->unsignedBigInteger('solicitante_id');
-            $table->foreign('solicitante')->references('id')->on('solicitantes')->onDelete('cascade'); 
+            $table->foreign('solicitante_id')->references('id')->on('solicitantes')->onDelete('cascade'); 
             $table->timestamps();
         });
     }
